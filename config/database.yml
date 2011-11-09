@@ -1,0 +1,10 @@
+development: &defaults
+  adapter: postgresql
+  database: gfistainless_development
+  username: postgres
+  password: 1spoon
+  min_messages: WARNING
+  
+test:
+  <<: *defaults
+  database: gfistainless_test
