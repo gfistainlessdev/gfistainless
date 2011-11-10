@@ -5,3 +5,11 @@
  *= require_self
  *= require_tree . 
 */
+
+.nested_categories {
+	margin-left: 15px;
+}
+
+.nested_categories .nested_categories .nested_categories .nested_categories  {
+	margin-left: 0px;
+}

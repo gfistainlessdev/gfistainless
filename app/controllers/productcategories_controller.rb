@@ -2,12 +2,10 @@ class ProductcategoriesController < ApplicationController
   # GET /productcategories
   # GET /productcategories.json
   def index
-    @productcategories = Productcategory.all
+    @productcategories = Productcategory.scoped
+    #@productcategory = Productcategory.new
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @productcategories }
-    end
+   
   end
 
   # GET /productcategories/1
@@ -23,9 +21,8 @@ class ProductcategoriesController < ApplicationController
 
   # GET /productcategories/new
   # GET /productcategories/new.json
-  def new
-    @productcategory = Productcategory.new
-
+  def new()
+    @productcategory = Productcategory.new(parent_id: params[:parent_id])
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @productcategory }
@@ -41,7 +38,9 @@ class ProductcategoriesController < ApplicationController
   # POST /productcategories.json
   def create
     @productcategory = Productcategory.new(params[:productcategory])
-
+    if @productcategory.ancestry ==""
+      @productcategory.ancestry = nil
+    end
     respond_to do |format|
       if @productcategory.save
         format.html { redirect_to @productcategory, notice: 'Productcategory was successfully created.' }

@@ -1,21 +1,4 @@
 <h1>Listing productcategories</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @productcategories.each do |productcategory| %>
-  <tr>
-    <td><%=productcategory.name%><br /><%= link_to 'Show', productcategory %></td>
-    <td><%= link_to 'Edit', edit_productcategory_path(productcategory) %></td>
-    <td><%= link_to 'Destroy', productcategory, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
+<%= nested_categories @productcategories.arrange(:order=>:name)%>
 <%= link_to 'New Productcategory', new_productcategory_path %>
