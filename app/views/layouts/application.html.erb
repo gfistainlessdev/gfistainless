@@ -8,7 +8,19 @@
 <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
+	<% flash.each do |name, msg| %>
+     <%= content_tag :div, msg, :id => "flash_#{name}" %>
+   <% end %>
 	<div id="wrapper"><!-- #wrapper -->
+		<% if current_user %>
+		  Logged in as <%= current_user.email %>.
+		  <%= link_to "Log out", logout_path %>
+		<% else %>
+		  <%= link_to "Sign up", signup_path %> or
+		  <%= link_to "log in", login_path %>.
+		<% end %>
+
+		
 <%=render 'layouts/header' %>
 <%=render 'layouts/topnav' %>
 <section id="main"><!-- #main content and sidebar area -->
