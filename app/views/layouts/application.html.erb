@@ -5,10 +5,103 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
+	<div id="wrapper"><!-- #wrapper -->
+<%=render 'layouts/header' %>
+<%=render 'layouts/topnav' %>
+<section id="main"><!-- #main content and sidebar area -->
 
 <%= yield %>
+<aside id="sidebar1"><!-- sidebar1 -->
+				<h3>Things To Do</h3>
+					<ul>
+						<li><a href="#">Play Games</a></li>
+						<li><a href="#">Chat With Friends</a></li>
+						<li><a href="#">Swap Stories</a></li>
+						<li><a href="#">Sell Stuff</a></li>
+						<li><a href="#">Buy Stuff</a></li>
+						<li><a href="#">Trade Stuff</a></li>
+					</ul>
+					
+				<h3>Sponsors</h3>
+					<%= image_tag "ad125.jpg", alt:"" %><br /><%= image_tag "ad125.jpg", alt:"" %><br /><br />
 
+				<h3>Related Articles</h3>
+					<ul>
+						<li><a href="#">Curabitur sodales</a></li>
+						<li><a href="#">Sed dignissim</a></li>
+						<li><a href="#">Fusce nec</a></li>
+						<li><a href="#">Curabitur sodales</a></li>
+						<li><a href="#">Sed dignissim</a></li>
+						<li><a href="#">Fusce nec</a></li>
+					</ul>
+
+				<h3>Connect With Us</h3>
+					<ul>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="#">Facebook</a></li>
+					</ul>
+
+		</aside><!-- end of sidebar1 -->
+
+		<aside id="sidebar2"><!-- sidebar2 -->
+				<h3>Stuff</h3>
+					<ul>
+						<li><a href="#">Curabitur sodales</a></li>
+						<li><a href="#">Sed dignissim</a></li>
+						<li><a href="#">Fusce nec</a></li>
+						<li><a href="#">Nulla quis</a></li>
+					</ul>
+
+				<h3>More Stuff</h3>
+					<ul>
+						<li><a href="#">Blah, blah and all blah</a></li>
+						<li><a href="#">More blah</a></li>
+					</ul>
+
+				<h3>S'more Goodies</h3>
+					<ul>
+						<li><a href="#">Curabitur sodales</a></li>
+						<li><a href="#">Sed dignissim</a></li>
+						<li><a href="#">Fusce nec</a></li>
+						<li><a href="#">Nulla quis</a></li>
+						<li><a href="#">Curabitur sodales</a></li>
+						<li><a href="#">Sed dignissim</a></li>
+						<li><a href="#">Fusce nec</a></li>
+						<li><a href="#">Nulla quis</a></li>
+					</ul>
+
+				<h3>Did You Know?</h3>
+					<ul>
+						<li><a href="#">Curabitur sodales</a></li>
+						<li><a href="#">Sed dignissim</a></li>
+						<li><a href="#">Fusce nec</a></li>
+						<li><a href="#">Nulla quis</a></li>
+						<li><a href="#">Curabitur sodales</a></li>
+						<li><a href="#">Sed dignissim</a></li>
+						<li><a href="#">Fusce nec</a></li>
+						<li><a href="#">Nulla quis</a></li>
+					</ul>
+
+				<h3>FAQ</h3>
+					<ul>
+						<li><a href="#">Curabitur sodales</a></li>
+						<li><a href="#">Sed dignissim</a></li>
+						<li><a href="#">Fusce nec</a></li>
+						<li><a href="#">Nulla quis</a></li>
+						<li><a href="#">Curabitur sodales</a></li>
+						<li><a href="#">Sed dignissim</a></li>
+						<li><a href="#">Fusce nec</a></li>
+						<li><a href="#">Nulla quis</a></li>
+					</ul>
+
+		</aside><!-- end of sidebar -->
+
+</section>
+
+<%= render 'layouts/footer' %>
+	</div>
 </body>
 </html>
