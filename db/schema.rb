@@ -11,16 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111110185234) do
+ActiveRecord::Schema.define(:version => 20111110211353) do
 
   create_table "productcategories", :force => true do |t|
-    t.string   "name",       :limit => 250, :null => false
+    t.string   "name",              :limit => 250, :null => false
     t.string   "ancestry"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "names_depth_cache"
   end
 
   add_index "productcategories", ["ancestry"], :name => "index_productcategories_on_ancestry"
+
+  create_table "products", :force => true do |t|
+    t.string   "name",               :limit => 250, :null => false
+    t.integer  "productcategory_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"
