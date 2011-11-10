@@ -12,13 +12,14 @@
      <%= content_tag :div, msg, :id => "flash_#{name}" %>
    <% end %>
 	<div id="wrapper"><!-- #wrapper -->
-		<% if current_user %>
+		<div align="right" style="marign-right: 15px;"><% if current_user %>
 		  Logged in as <%= current_user.email %>.
 		  <%= link_to "Log out", logout_path %>
 		<% else %>
 		  <%= link_to "Sign up", signup_path %> or
 		  <%= link_to "log in", login_path %>.
 		<% end %>
+		</div>
 
 		
 <%=render 'layouts/header' %>
