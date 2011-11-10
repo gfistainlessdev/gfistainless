@@ -1,4 +1,4 @@
-class ProductcategoriesController < ApplicationController
+class Admin::ProductcategoriesController < ApplicationController
   # GET /productcategories
   # GET /productcategories.json
   def index
@@ -43,8 +43,8 @@ class ProductcategoriesController < ApplicationController
     end
     respond_to do |format|
       if @productcategory.save
-        format.html { redirect_to @productcategory, notice: 'Productcategory was successfully created.' }
-        format.json { render json: @productcategory, status: :created, location: @productcategory }
+        format.html { redirect_to [:admin,@productcategory], notice: 'Productcategory was successfully created.' }
+        format.json { render json: @productcategory, status: :created, location: [:admin,@productcategory] }
       else
         format.html { render action: "new" }
         format.json { render json: @productcategory.errors, status: :unprocessable_entity }
@@ -59,7 +59,7 @@ class ProductcategoriesController < ApplicationController
 
     respond_to do |format|
       if @productcategory.update_attributes(params[:productcategory])
-        format.html { redirect_to @productcategory, notice: 'Productcategory was successfully updated.' }
+        format.html { redirect_to [:admin,@productcategory], notice: 'Productcategory was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -75,7 +75,7 @@ class ProductcategoriesController < ApplicationController
     @productcategory.destroy
 
     respond_to do |format|
-      format.html { redirect_to productcategories_url }
+      format.html { redirect_to admin_productcategories_url }
       format.json { head :ok }
     end
   end

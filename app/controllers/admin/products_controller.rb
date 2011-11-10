@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Admin::ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
@@ -35,20 +35,19 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    @productcategories = Productcategory.order(:names_depth_cache).map { |c| ["-" * c.depth + c.name,c.id] }
   end
 
   # POST /products
   # POST /products.json
   def create
     #@product = Product.new(params[:product])
-    @product=Product.new
-    @product.name=params[:product][:name]
-    @product.productcategory=Productcategory.find(params[:product][:productcategory])
+    @product=Product.new(params[:product])
     
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render json: @product, status: :created, location: @product }
+        format.html { redirect_to [:admin,@product], notice: 'Product was successfully created.' }
+        format.json { render json: @product, status: :created, location: [:admin,@product] }
       else
         format.html { render action: "new" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -60,10 +59,10 @@ class ProductsController < ApplicationController
   # PUT /products/1.json
   def update
     @product = Product.find(params[:id])
-
+     
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to [:admin,@product], notice: 'Product was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -79,7 +78,7 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to products_url }
+      format.html { redirect_to admin_products_url }
       format.json { head :ok }
     end
   end

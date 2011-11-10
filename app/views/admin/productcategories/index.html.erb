@@ -1,4 +1,4 @@
 <h1>Listing productcategories</h1>
 
 <%= nested_categories @productcategories.arrange(:order=>:name)%>
-<%= link_to 'New Productcategory', new_productcategory_path %>
+<%= link_to 'New Productcategory', new_admin_productcategory_path %>
