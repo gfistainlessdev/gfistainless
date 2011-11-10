@@ -1,15 +1,17 @@
 Gfistainless::Application.routes.draw do
 
-  resources :products
+  
+  
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
   resources :users
   resources :sessions
-
-  resources :productcategories
-
+  namespace :admin do
+    resources :productcategories
+    resources :products
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
