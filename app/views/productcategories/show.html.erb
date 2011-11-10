@@ -1,8 +1,0 @@
-<p id="notice"><%= notice %></p>
-
-<%= nested_categories @productcategory.subtree.arrange(order: :name)%>
-
-<%= link_to 'Create Sub Category', new_productcategory_path(parent_id: @productcategory.id)%>
-
-<%= link_to 'Edit', edit_productcategory_path(@productcategory) %> |
-<%= link_to 'Back', productcategories_path %>
