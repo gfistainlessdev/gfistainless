@@ -1,5 +1,6 @@
 Gfistainless::Application.routes.draw do
 
+  resources :productcategories
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
