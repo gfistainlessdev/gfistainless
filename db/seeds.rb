@@ -34,3 +34,9 @@ firstchild.save!
 secondchild=Productcategory.find_or_initialize_by_name("SecondChild")
 secondchild.parent=top
 secondchild.save!
+#-----End Categories
+#-----Products
+firstproduct=Product.find_or_create_by_name("Product1")
+firstproduct.productcategory=firstchild
+firstproduct.save!
+
