@@ -8,6 +8,7 @@ gem 'rails', '3.1.0'
 gem 'pg'
 gem 'ancestry'
 gem 'sorcery'
+gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
 
 # Gems used only for assets and not required
 # in production environments by default.
