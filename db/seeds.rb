@@ -6,14 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-page=Page.new
-page.slug="about"
+page=Page.find_or_initialize_by_slug("about")
+
 page.name="About"
 page.content="this is the about page."
 page.save!
 
-page=Page.new
-page.slug="contact"
+page=Page.find_or_initialize_by_slug("contact")
+
 page.name="Contact Us"
 page.content="this is the contact page."
 page.save!
+
+user=User.find_or_initialize_by_email("test@user.com")
+user.password="123456"
+user.password_confirmation="123456"
+user.admin=true
+user.save!

@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  authorize_resource
+  
   def show
     @page=Page.where('lower(slug)=?',params[:id].downcase).first
   end
