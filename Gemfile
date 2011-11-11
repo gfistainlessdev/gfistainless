@@ -9,6 +9,7 @@ gem 'pg'
 gem 'ancestry'
 gem 'sorcery'
 gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
+gem 'cancan'
 
 # Gems used only for assets and not required
 # in production environments by default.

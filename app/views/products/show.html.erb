@@ -1,0 +1,6 @@
+<%=@category.name%>
+<%=nested_categories @category_children.arrange(:order=>:name), 'products/productcategory', 'nested_categories'%>
+
+<% @products.each do |p|%>
+	<%=p.name%>
+	<%end%>
