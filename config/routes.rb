@@ -1,7 +1,7 @@
 Gfistainless::Application.routes.draw do
 
-  
-  
+  get "products" => "products#index", as: "products"
+  get "products/show/*id" => "products#show", as: "productcat"
 
   
 
