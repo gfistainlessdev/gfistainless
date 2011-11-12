@@ -1,0 +1,17 @@
+
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for manufacturer in @manufacturers %>
+    <tr>
+      <td><%= manufacturer.name %></td>
+      <td><%= link_to "Show", [:admin, manufacturer] %></td>
+      <td><%= link_to "Edit", edit_admin_manufacturer_path(manufacturer) %></td>
+      <td><%= link_to "Destroy", [:admin, manufacturer], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Manufacturer", new_admin_manufacturer_path %></p>

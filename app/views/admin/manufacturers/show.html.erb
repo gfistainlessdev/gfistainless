@@ -1,0 +1,12 @@
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @manufacturer.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_manufacturer_path(@manufacturer) %> |
+  <%= link_to "Destroy", [:admin, @manufacturer], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_manufacturers_path %>
+</p>
