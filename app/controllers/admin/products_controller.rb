@@ -26,6 +26,7 @@ class Admin::ProductsController < ApplicationController
   def new
     @product = Product.new
     @productcategories = Productcategory.order(:names_depth_cache).map { |c| ["-" * c.depth + c.name,c.id] }
+    @manufacturers = Manufacturer.order(:name).map { |m| [m.name, m.id]}
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }
@@ -36,6 +37,7 @@ class Admin::ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     @productcategories = Productcategory.order(:names_depth_cache).map { |c| ["-" * c.depth + c.name,c.id] }
+    @manufacturers = Manufacturer.order(:name).map { |m| [m.name, m.id]}
   end
 
   # POST /products
