@@ -18,6 +18,9 @@ page.name="Contact Us"
 page.content="this is the contact page."
 page.save!
 #------End Pages
+mfr=Manufacturer.find_or_initialize_by_name("Acme")
+mfr.url="http://www.acme.com"
+mfr.save!
 #------Users
 user=User.find_or_initialize_by_email("test@user.com")
 user.password="123456"
