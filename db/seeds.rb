@@ -55,6 +55,7 @@ while i < 100
     p=Product.find_or_initialize_by_name("Itemnumber" + i.to_s)
 
     p.productcategory=Productcategory.random
+    p.manufacturer=mfr
     p.save!
   end
 #--------End Products
