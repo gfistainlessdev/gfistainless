@@ -10,4 +10,8 @@ class ProductsController < ApplicationController
     @category_children=@category.children.scoped
     @products=Product.where(productcategory_id: @category.subtree_ids)
   end
+  
+  def display
+    @product = Product.find(params[:id])
+  end
 end
